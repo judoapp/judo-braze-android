@@ -3,12 +3,14 @@ package app.judo.braze.sample
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import app.judo.braze.sample.ui.theme.JudoBrazeSampleTheme
+import com.braze.Braze
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,11 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
                     Greeting("Android")
+                    Button(onClick = {
+                        Braze.getInstance(this).logCustomEvent("My Test Event")
+                    }) {
+                        Text("Fire Braze Event")
+                    }
                 }
             }
         }

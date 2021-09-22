@@ -4,7 +4,19 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+
+        // Judo
+        maven {
+            url 'https://judoapp.github.io/judo-android/sdk/maven'
+        }
+        maven {
+            url 'https://judoapp.github.io/judo-android-libs/maven'
+        }
+
+        // Braze
+        maven { url "https://appboy.github.io/appboy-android-sdk/sdk" }
     }
 }
 rootProject.name = "JudoBrazeSample"
-include ':app'
+include ':sample'
+include ':library'

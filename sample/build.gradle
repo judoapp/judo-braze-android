@@ -62,4 +62,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+
+    implementation 'app.judo:judo-sdk:1.3.3'
+    implementation "com.appboy:android-sdk-ui:16.0.0"
+
+    // A dependency on the JudoBraze library:
+    // (In a real app, you would use `app.judo:judo-braze:1.0.0`)
+    implementation project(':library')
 }
