@@ -22,13 +22,13 @@ class JudoBrazeSampleApplication: Application() {
 
         Judo.integrateWithBraze(this)
 
-BrazeInAppMessageManager.getInstance().setCustomInAppMessageManagerListener(
-    object : DefaultInAppMessageManagerListener() {
-        override fun beforeInAppMessageDisplayed(inAppMessage: IInAppMessage?): InAppMessageOperation {
-            return Judo.brazeBeforeInAppMessageDisplayed(this@JudoBrazeSampleApplication, inAppMessage) ?: super.beforeInAppMessageDisplayed(inAppMessage)
-        }
-    }
-)
+        BrazeInAppMessageManager.getInstance().setCustomInAppMessageManagerListener(
+            object : DefaultInAppMessageManagerListener() {
+                override fun beforeInAppMessageDisplayed(inAppMessage: IInAppMessage?): InAppMessageOperation {
+                    return Judo.brazeBeforeInAppMessageDisplayed(this@JudoBrazeSampleApplication, inAppMessage) ?: super.beforeInAppMessageDisplayed(inAppMessage)
+                }
+            }
+        )
 
         registerActivityLifecycleCallbacks(BrazeActivityLifecycleCallbackListener(true, true))
     }
