@@ -10,7 +10,7 @@ import com.braze.ui.inappmessage.InAppMessageOperation
 
 /**
  * Call this method to automatically track Judo events into Braze.
- * Note to enable IAP integration there is further work to do, please see the documentation
+ * Note to enable IAM integration there is further work to do, please see the documentation
  * included with this module.
  */
 fun Judo.integrateWithBraze(application: Application) {
@@ -37,6 +37,7 @@ fun Judo.brazeBeforeInAppMessageDisplayed(application: Application, inAppMessage
     return if(experienceUrl != null) {
         val intent = makeIntent(application, experienceUrl)
         intent.flags += Intent.FLAG_ACTIVITY_NEW_TASK
+        inAppMessage.logImpression()
         application.startActivity(intent)
         InAppMessageOperation.DISCARD
     } else {
