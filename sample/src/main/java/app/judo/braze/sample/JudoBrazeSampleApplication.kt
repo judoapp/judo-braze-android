@@ -17,7 +17,7 @@ class JudoBrazeSampleApplication: Application() {
         Judo.initialize(
             application = this,
             accessToken = "<JUDO ACCESS TOKEN>",
-            "<JUDO APP DOMAIN>"
+            "dogwalking.judo.app"
         )
 
         Judo.integrateWithBraze(this)

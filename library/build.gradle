@@ -6,7 +6,7 @@ plugins {
 
 ext.judoGroupId = "app.judo"
 ext.judoBrazeArtifactId = "judo-braze"
-ext.judoBrazeVersion = "1.0.0"
+ext.judoBrazeVersion = "1.0.1"
 
 android {
     compileSdk 30
